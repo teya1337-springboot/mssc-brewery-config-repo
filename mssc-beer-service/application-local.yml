@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${DB_NAME}?currentSchema=mssc_beer_service&binaryTransfer=true&reWriteBatchedInserts=true
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 10
+      keepalive-time: 60000
+      idle-timeout: 120000
+      leak-detection-threshold: 150000
+      max-lifetime: 180000
+      connection-timeout: 3000
+      validation-timeout: 2500
+      register-mbeans: true
+
+  sql:
+    init:
+      platform: postgres
+      schema-locations: classpath:init-schema.sql
+      # data-locations: classpath:init-data.sql
+      mode: always
