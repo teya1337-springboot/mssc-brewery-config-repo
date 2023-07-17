@@ -9,10 +9,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/${DB_NAME}?currentSchema=mssc_beer_service&binaryTransfer=true&reWriteBatchedInserts=true
+    url: jdbc:postgresql://localhost:5432/${DB_NAME}?currentSchema=mssc_beer_inventory_service&binaryTransfer=true&reWriteBatchedInserts=true
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
