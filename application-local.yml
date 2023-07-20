@@ -1,0 +1,41 @@
+spring:
+  jpa:
+    # Disables open-in-view sessions which forces the persistence context to stay open so that the view layer can trigger proxy initialization. This will keep the DB connection open for a long time which would have a bad effect on performance.
+    open-in-view: false
+    show-sql: false
+    database-platform: org.hibernate.dialect.Database.POSTGRESQL
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 10
+      keepalive-time: 60000
+      idle-timeout: 120000
+      leak-detection-threshold: 150000
+      max-lifetime: 180000
+      connection-timeout: 3000
+      validation-timeout: 2500
+      register-mbeans: true
+
+    sql:
+      init:
+        platform: postgres
+        schema-locations: classpath:init-schema.sql
+        # data-locations: classpath:init-data.sql
+        mode: always
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
