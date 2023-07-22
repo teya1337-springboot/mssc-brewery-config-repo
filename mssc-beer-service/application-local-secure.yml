@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${DB_NAME}?currentSchema=mssc_beer_service&binaryTransfer=true&reWriteBatchedInserts=true
+    username: postgres
+    password: {cipher}25c4d4be46979116209db438bd79f6f30faec850e701d7b431dca1775013770f
+
+  # docker-image: vromero/activemq-artemis
+  artemis:
+    user: artemis
+    password: {cipher}fe9aec5b00984e65c887196fac66b45231f4b8eb5e6eb1bd325fe10ed043154f
