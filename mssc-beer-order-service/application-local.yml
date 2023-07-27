@@ -1,5 +1,5 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/${DB_NAME}?currentSchema=mssc_beer_order_service&binaryTransfer=true&reWriteBatchedInserts=true
-    username: ${DB_USERNAME}
+    username: ${DB_USER}
     password: ${DB_PASSWORD}
