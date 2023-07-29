@@ -1,5 +1,10 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/${DB_NAME}?currentSchema=mssc_beer_service&binaryTransfer=true&reWriteBatchedInserts=true
+    url: jdbc:postgresql://postgres:5432/${DB_NAME}?currentSchema=mssc_beer_service&binaryTransfer=true&reWriteBatchedInserts=true
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
+
+  artemis:
+    user: ${ARTEMIS_USER}
+    password: ${ARTEMIS_PASSWORD}
+    broker-url: tcp://artemis:61616/
