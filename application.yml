@@ -38,5 +38,6 @@ management:
       probability: 1.0
   zipkin:
     tracing:
+      # IMPORTANT NOTE: Do NOT put a slash "/" at the end of "spans" (will not work)
       endpoint: http://zipkin:9411/api/v2/spans
 
